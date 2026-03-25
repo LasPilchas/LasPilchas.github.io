@@ -31,6 +31,15 @@
       cursor: pointer;
     }
 
+    .delete {
+      margin-left: 10px;
+      background: red;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
     .wsp {
       position: fixed;
       bottom: 20px;
@@ -66,6 +75,7 @@
 
 <button onclick="comprar()">Comprar por WhatsApp</button>
 
+<!-- BOTÓN WHATSAPP -->
 <a href="https://wa.me/5492216193015" class="wsp" target="_blank">💬</a>
 
 <script>
@@ -83,14 +93,28 @@ function actualizar() {
   lista.innerHTML = "";
   let suma = 0;
 
-  carrito.forEach((item) => {
+  carrito.forEach((item, index) => {
     const li = document.createElement("li");
+
     li.textContent = item.nombre + " - $" + item.precio;
+
+    const btn = document.createElement("button");
+    btn.textContent = "❌";
+    btn.className = "delete";
+    btn.onclick = () => eliminar(index);
+
+    li.appendChild(btn);
     lista.appendChild(li);
+
     suma += item.precio;
   });
 
   total.textContent = "Total: $" + suma;
+}
+
+function eliminar(index) {
+  carrito.splice(index, 1);
+  actualizar();
 }
 
 function comprar() {
