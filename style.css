@@ -5,20 +5,18 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: #000;
   color: #fff;
   text-align: center;
 }
 
-/* HEADER */
 header {
-  padding: 30px 20px;
+  padding: 30px;
 }
 
 .logo {
   width: 120px;
-  margin-bottom: 10px;
 }
 
 h1 {
@@ -30,47 +28,70 @@ p {
   color: #aaa;
 }
 
-/* BOTÓN */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #fff;
-  color: #000;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #ccc;
-}
-
 /* PRODUCTOS */
 .productos {
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .card {
   display: inline-block;
   background: #111;
   margin: 15px;
-  padding: 20px;
+  padding: 15px;
   border-radius: 15px;
   width: 220px;
   transition: 0.3s;
 }
 
-.card:hover {
-  transform: scale(1.05);
+.card img {
+  width: 100%;
+  border-radius: 10px;
 }
 
-/* FOOTER */
-footer {
-  margin-top: 80px;
-  padding: 20px;
-  background: #111;
-  font-size: 14px;
-  color: #777;
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* CARRITO */
+#carrito-lista {
+  list-style: none;
+  margin-top: 20px;
+}
+
+#carrito-lista li {
+  margin: 5px;
+}
+
+/* BOTÓN */
+.btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: white;
+  color: black;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* WHATSAPP */
+.wsp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 25px;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
 }
