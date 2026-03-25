@@ -2,6 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+
+  <!-- 🔥 CLAVE PARA CELULAR -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>LAS PILCHAS</title>
 
   <style>
@@ -10,36 +14,73 @@
       background: black;
       color: white;
       text-align: center;
+      margin: 0;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 28px;
+    }
+
+    /* PRODUCTOS */
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .card {
-      display: inline-block;
       background: #111;
-      margin: 15px;
+      margin: 10px;
       padding: 15px;
       border-radius: 15px;
-      width: 220px;
+      width: 90%;
+      max-width: 250px;
     }
 
     button {
       margin-top: 10px;
-      padding: 10px;
+      padding: 12px;
+      width: 100%;
       border: none;
       background: white;
       color: black;
       border-radius: 10px;
+      font-size: 16px;
       cursor: pointer;
     }
 
     .delete {
-      margin-left: 10px;
       background: red;
       color: white;
+      width: auto;
       padding: 5px 10px;
-      border-radius: 8px;
-      cursor: pointer;
+      margin-left: 10px;
     }
 
+    /* CARRITO */
+    #carrito {
+      list-style: none;
+      padding: 0;
+    }
+
+    #carrito li {
+      margin: 10px;
+    }
+
+    /* BOTÓN COMPRAR */
+    .comprar {
+      margin: 20px;
+      padding: 15px;
+      width: 90%;
+      max-width: 300px;
+      background: #25D366;
+      color: white;
+      border-radius: 15px;
+      font-size: 18px;
+    }
+
+    /* WHATSAPP FLOTANTE */
     .wsp {
       position: fixed;
       bottom: 20px;
@@ -57,25 +98,28 @@
 
 <h1>LAS PILCHAS</h1>
 
-<div class="card">
-  <h3>Remera Negra</h3>
-  <p>$5000</p>
-  <button onclick="agregarAlCarrito('Remera Negra', 5000)">Agregar</button>
-</div>
+<div class="productos">
 
-<div class="card">
-  <h3>Buzo Oversize</h3>
-  <p>$12000</p>
-  <button onclick="agregarAlCarrito('Buzo Oversize', 12000)">Agregar</button>
+  <div class="card">
+    <h3>Remera Negra</h3>
+    <p>$5000</p>
+    <button onclick="agregarAlCarrito('Remera Negra', 5000)">Agregar</button>
+  </div>
+
+  <div class="card">
+    <h3>Buzo Oversize</h3>
+    <p>$12000</p>
+    <button onclick="agregarAlCarrito('Buzo Oversize', 12000)">Agregar</button>
+  </div>
+
 </div>
 
 <h2>Carrito 🛒</h2>
 <ul id="carrito"></ul>
 <p id="total">Total: $0</p>
 
-<button onclick="comprar()">Comprar por WhatsApp</button>
+<button onclick="comprar()" class="comprar">Comprar por WhatsApp</button>
 
-<!-- BOTÓN WHATSAPP -->
 <a href="https://wa.me/5492216193015" class="wsp" target="_blank">💬</a>
 
 <script>
