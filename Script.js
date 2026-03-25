@@ -1,4 +1,4 @@
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 function agregarAlCarrito(nombre, precio) {
   carrito.push({ nombre, precio });
@@ -27,6 +27,8 @@ function actualizarCarrito() {
   });
 
   total.textContent = "Total: $" + suma;
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
 function eliminarProducto(index) {
@@ -48,3 +50,6 @@ function comprar() {
   const url = "https://wa.me/549XXXXXXXXXX?text=" + encodeURIComponent(mensaje);
   window.open(url, "_blank");
 }
+
+// Cargar carrito al iniciar
+actualizarCarrito();
