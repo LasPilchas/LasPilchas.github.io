@@ -47,9 +47,9 @@ function comprar() {
     mensaje += "- " + item.nombre + " $" + item.precio + "\n";
   });
 
-  const url = "https://wa.me/5492216193015?text=" + encodeURIComponent(mensaje);
+  const url = "https://wa.me/5492210000000?text=" + encodeURIComponent(mensaje);
   window.open(url, "_blank");
 }
 
-// Cargar carrito al iniciar
-actualizarCarrito();
+// 🔥 ESTO ES CLAVE
+document.addEventListener("DOMContentLoaded", actualizarCarrito);
