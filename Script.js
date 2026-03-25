@@ -47,7 +47,7 @@ function comprar() {
     mensaje += "- " + item.nombre + " $" + item.precio + "\n";
   });
 
-  const url = "https://wa.me/549XXXXXXXXXX?text=" + encodeURIComponent(mensaje);
+  const url = "https://wa.me/5492216193015?text=" + encodeURIComponent(mensaje);
   window.open(url, "_blank");
 }
 
