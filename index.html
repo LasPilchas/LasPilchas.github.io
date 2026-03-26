@@ -5,128 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LAS PILCHAS</title>
 
-  <style>
-    body {
-      font-family: Arial;
-      background: black;
-      color: white;
-      text-align: center;
-      margin: 0;
-    }
-
-    .hero {
-      padding: 20px;
-      background: #111;
-    }
-
-    .logo {
-      width: 100px;
-    }
-
-    .productos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .card {
-      background: #111;
-      margin: 10px;
-      padding: 15px;
-      border-radius: 15px;
-      width: 90%;
-      max-width: 250px;
-      transition: 0.3s;
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-    }
-
-    button {
-      margin-top: 10px;
-      padding: 12px;
-      width: 100%;
-      border: none;
-      background: white;
-      color: black;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    .delete {
-      background: red;
-      color: white;
-      padding: 5px 10px;
-      margin-left: 10px;
-    }
-
-    #carrito {
-      list-style: none;
-      padding: 0;
-    }
-
-    .comprar {
-      margin: 20px;
-      padding: 15px;
-      width: 90%;
-      max-width: 300px;
-      background: #25D366;
-      color: white;
-      border-radius: 15px;
-    }
-
-    .wsp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      font-size: 25px;
-      padding: 15px;
-      border-radius: 50%;
-      text-decoration: none;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="hero">
-  <img src="logo.png" class="logo">
+  <img src="logo.png" class="logo" alt="Logo LAS PILCHAS">
   <h1>LAS PILCHAS</h1>
 </div>
 
 <div class="productos">
 
   <div class="card">
-    <img src="nike-roja.jpg">
+    <img src="WhatsApp Image 2026-03-25 at 22.47.55.jpeg" alt="Nike SB Roja">
     <h3>Nike SB Roja</h3>
     <p>$15000</p>
     <button onclick="agregarAlCarrito('Nike SB Roja', 15000)">Agregar</button>
   </div>
 
   <div class="card">
-    <img src="nike-negra.jpg">
+    <img src="WhatsApp Image 2026-03-25 at 22.47.56 (1).jpeg" alt="Nike SB Negra">
     <h3>Nike SB Negra</h3>
     <p>$15000</p>
     <button onclick="agregarAlCarrito('Nike SB Negra', 15000)">Agregar</button>
   </div>
 
   <div class="card">
-    <img src="perfume.jpg">
+    <img src="WhatsApp Image 2026-03-25 at 22.47.56 (2).jpeg" alt="Perfume">
     <h3>Perfume</h3>
     <p>$4000</p>
     <button onclick="agregarAlCarrito('Perfume', 4000)">Agregar</button>
   </div>
 
   <div class="card">
-    <img src="reloj.jpg">
+    <img src="WhatsApp Image 2026-03-25 at 22.47.56.jpeg" alt="Reloj Azul">
     <h3>Reloj Azul</h3>
     <p>$10000</p>
     <button onclick="agregarAlCarrito('Reloj Azul', 10000)">Agregar</button>
@@ -142,55 +54,7 @@
 
 <a href="https://wa.me/5492216193015" class="wsp" target="_blank">💬</a>
 
-<script>
-let carrito = [];
-
-function agregarAlCarrito(nombre, precio) {
-  carrito.push({ nombre, precio });
-  actualizar();
-}
-
-function actualizar() {
-  const lista = document.getElementById("carrito");
-  const total = document.getElementById("total");
-
-  lista.innerHTML = "";
-  let suma = 0;
-
-  carrito.forEach((item, index) => {
-    const li = document.createElement("li");
-
-    li.textContent = item.nombre + " - $" + item.precio;
-
-    const btn = document.createElement("button");
-    btn.textContent = "❌";
-    btn.className = "delete";
-    btn.onclick = () => eliminar(index);
-
-    li.appendChild(btn);
-    lista.appendChild(li);
-
-    suma += item.precio;
-  });
-
-  total.textContent = "Total: $" + suma;
-}
-
-function eliminar(index) {
-  carrito.splice(index, 1);
-  actualizar();
-}
-
-function comprar() {
-  let mensaje = "Hola quiero comprar:\n";
-
-  carrito.forEach(item => {
-    mensaje += "- " + item.nombre + " $" + item.precio + "\n";
-  });
-
-  window.open("https://wa.me/5492216193015?text=" + encodeURIComponent(mensaje));
-}
-</script>
+<script src="Script.js"></script>
 
 </body>
 </html>
