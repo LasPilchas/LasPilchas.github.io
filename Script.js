@@ -1,12 +1,13 @@
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+// Script.js
+let carrito = [];
 
 function agregarAlCarrito(nombre, precio) {
   carrito.push({ nombre, precio });
-  actualizarCarrito();
+  actualizar();
 }
 
-function actualizarCarrito() {
-  const lista = document.getElementById("carrito-lista");
+function actualizar() {
+  const lista = document.getElementById("carrito");
   const total = document.getElementById("total");
 
   lista.innerHTML = "";
@@ -18,7 +19,8 @@ function actualizarCarrito() {
 
     const btn = document.createElement("button");
     btn.textContent = "❌";
-    btn.onclick = () => eliminarProducto(index);
+    btn.className = "delete";
+    btn.onclick = () => eliminar(index);
 
     li.appendChild(btn);
     lista.appendChild(li);
@@ -27,29 +29,24 @@ function actualizarCarrito() {
   });
 
   total.textContent = "Total: $" + suma;
-
-  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-function eliminarProducto(index) {
+function eliminar(index) {
   carrito.splice(index, 1);
-  actualizarCarrito();
+  actualizar();
 }
 
 function comprar() {
   if (carrito.length === 0) {
-    alert("El carrito está vacío");
+    alert("Tu carrito está vacío 😢");
     return;
   }
 
-  let mensaje = "Hola, quiero comprar:\n";
+  let mensaje = "Hola! Quiero comprar:\n";
+
   carrito.forEach(item => {
-    mensaje += "- " + item.nombre + " $" + item.precio + "\n";
+    mensaje += `- ${item.nombre} $${item.precio}\n`;
   });
 
-  const url = "https://wa.me/5492212216193015?text=" + encodeURIComponent(mensaje);
-  window.open(url, "_blank");
+  window.open("https://wa.me/5492216193015?text=" + encodeURIComponent(mensaje));
 }
-
-// 🔥 ESTO ES CLAVE
-document.addEventListener("DOMContentLoaded", actualizarCarrito);
