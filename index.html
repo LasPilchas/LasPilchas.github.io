@@ -15,7 +15,7 @@
     }
 
     .hero {
-      padding: 30px;
+      padding: 20px;
       background: #111;
     }
 
@@ -36,6 +36,17 @@
       border-radius: 15px;
       width: 90%;
       max-width: 250px;
+      transition: 0.3s;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
     }
 
     button {
@@ -94,24 +105,28 @@
 <div class="productos">
 
   <div class="card">
+    <img src="nike-roja.jpg">
     <h3>Nike SB Roja</h3>
     <p>$15000</p>
     <button onclick="agregarAlCarrito('Nike SB Roja', 15000)">Agregar</button>
   </div>
 
   <div class="card">
+    <img src="nike-negra.jpg">
     <h3>Nike SB Negra</h3>
     <p>$15000</p>
     <button onclick="agregarAlCarrito('Nike SB Negra', 15000)">Agregar</button>
   </div>
 
   <div class="card">
+    <img src="perfume.jpg">
     <h3>Perfume</h3>
     <p>$4000</p>
     <button onclick="agregarAlCarrito('Perfume', 4000)">Agregar</button>
   </div>
 
   <div class="card">
+    <img src="reloj.jpg">
     <h3>Reloj Azul</h3>
     <p>$10000</p>
     <button onclick="agregarAlCarrito('Reloj Azul', 10000)">Agregar</button>
