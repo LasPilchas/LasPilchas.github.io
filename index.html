@@ -2,10 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-
-  <!-- 🔥 CLAVE PARA CELULAR -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>LAS PILCHAS</title>
 
   <style>
@@ -17,9 +14,23 @@
       margin: 0;
     }
 
-    h1 {
-      margin-top: 20px;
-      font-size: 28px;
+    /* HERO */
+    .hero {
+      padding: 40px 20px;
+      background: linear-gradient(black, #111);
+    }
+
+    .logo {
+      width: 100px;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+    }
+
+    .hero p {
+      color: #aaa;
     }
 
     /* PRODUCTOS */
@@ -36,6 +47,11 @@
       border-radius: 15px;
       width: 90%;
       max-width: 250px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
     }
 
     button {
@@ -56,6 +72,13 @@
       width: auto;
       padding: 5px 10px;
       margin-left: 10px;
+    }
+
+    /* INFO */
+    .info {
+      padding: 30px;
+      background: #111;
+      margin-top: 30px;
     }
 
     /* CARRITO */
@@ -80,7 +103,16 @@
       font-size: 18px;
     }
 
-    /* WHATSAPP FLOTANTE */
+    /* FOOTER */
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: #000;
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* WHATSAPP */
     .wsp {
       position: fixed;
       bottom: 20px;
@@ -96,8 +128,14 @@
 </head>
 <body>
 
-<h1>LAS PILCHAS</h1>
+<!-- HERO -->
+<div class="hero">
+  <img src="logo.png" class="logo">
+  <h1>LAS PILCHAS</h1>
+  <p>🔥 Estilo urbano - Edición limitada</p>
+</div>
 
+<!-- PRODUCTOS -->
 <div class="productos">
 
   <div class="card">
@@ -112,14 +150,33 @@
     <button onclick="agregarAlCarrito('Buzo Oversize', 12000)">Agregar</button>
   </div>
 
+  <div class="card">
+    <h3>Gorra Street</h3>
+    <p>$4000</p>
+    <button onclick="agregarAlCarrito('Gorra Street', 4000)">Agregar</button>
+  </div>
+
 </div>
 
+<!-- INFO -->
+<div class="info">
+  <h2>¿Quiénes somos?</h2>
+  <p>LAS PILCHAS es una marca de ropa urbana enfocada en estilo, actitud y exclusividad.</p>
+</div>
+
+<!-- CARRITO -->
 <h2>Carrito 🛒</h2>
 <ul id="carrito"></ul>
 <p id="total">Total: $0</p>
 
 <button onclick="comprar()" class="comprar">Comprar por WhatsApp</button>
 
+<!-- FOOTER -->
+<footer>
+  © 2026 LAS PILCHAS - Todos los derechos reservados
+</footer>
+
+<!-- WHATSAPP -->
 <a href="https://wa.me/5492216193015" class="wsp" target="_blank">💬</a>
 
 <script>
