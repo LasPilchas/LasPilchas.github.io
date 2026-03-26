@@ -15,50 +15,54 @@
 
     /* Header */
     .hero {
-      padding: 20px;
+      padding: 15px 10px;
       background: #111;
     }
 
     .hero img.logo {
-      width: 80px;
+      width: 70px;
       max-width: 100px;
       margin-bottom: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero h1 {
+      font-size: 1.5em;
+      margin: 5px 0;
     }
 
     /* Productos */
     .productos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 20px 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 15px;
-      padding: 0 10px;
+      padding: 10px;
     }
 
     .card {
       background: #111;
       border-radius: 15px;
-      padding: 15px;
-      width: 45%;
-      max-width: 220px;
-      transition: 0.3s;
+      padding: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      transition: transform 0.2s;
     }
 
     .card img {
       width: 100%;
+      height: 180px;
+      object-fit: contain;
       border-radius: 10px;
       margin-bottom: 10px;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
+      background: #222;
     }
 
     .card h3 {
       margin: 5px 0;
+      font-size: 1em;
     }
 
     .card p {
@@ -66,7 +70,7 @@
       font-weight: bold;
     }
 
-    button {
+    .card button {
       margin-top: 10px;
       padding: 12px;
       width: 100%;
@@ -78,19 +82,15 @@
       cursor: pointer;
     }
 
-    button.delete {
-      background: red;
-      color: white;
-      padding: 5px 10px;
-      margin-left: 10px;
-      border-radius: 5px;
+    .card:hover {
+      transform: scale(1.05);
     }
 
     /* Carrito */
     #carrito {
       list-style: none;
-      padding: 0;
-      margin: 10px 20px;
+      padding: 0 15px;
+      margin: 10px 0;
       text-align: left;
     }
 
@@ -128,13 +128,13 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      .card {
-        width: 90%;
+    /* Responsive extra */
+    @media (max-width: 400px) {
+      .hero h1 {
+        font-size: 1.2em;
       }
-      .hero img.logo {
-        width: 60px;
+      .card img {
+        height: 150px;
       }
     }
   </style>
